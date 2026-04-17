@@ -1,7 +1,6 @@
 <?php
   include "db.php";
 
-  // The Arrivals Board: We only fetch messages that have finished their "flight" time
   $sql = "SELECT * FROM messages WHERE scheduled_arrival <= CURRENT_TIMESTAMP ORDER BY id DESC";
   $result = mysqli_query($conn, $sql);
 
