@@ -8,6 +8,7 @@ if (isset($_POST['send'])){
   $transport_choice = $_POST['transport'] ?? 'pidgeon';
 
   if (!empty($name) && !empty($message)){
+<<<<<<< HEAD
     $base_time = 10;
 
     switch ($transport_choice) {
@@ -43,6 +44,13 @@ if (isset($_POST['send'])){
     
     $sql = "INSERT INTO messages (name, message, scheduled_arrival, transportation, status) 
             VALUES ('$name', '$message', DATE_ADD(CURRENT_TIMESTAMP, INTERVAL $delay_minutes MINUTE), '$transport_choice', '$status')";
+=======
+
+    $delay_minutes = 1; 
+
+    $sql = "INSERT INTO messages (name, message, scheduled_arrival) 
+            VALUES ('$name', '$message', DATE_ADD(CURRENT_TIMESTAMP, INTERVAL $delay_minutes MINUTE))";
+>>>>>>> 7dce11d33734e017108e4fe02513c74ac99000e1
     
     mysqli_query($conn, $sql);
   }
