@@ -1,7 +1,6 @@
 <?php
   include "db.php";
 
-  // The Arrivals Board: We only fetch messages that have finished their "flight" time
   $sql = "SELECT * FROM messages WHERE scheduled_arrival <= CURRENT_TIMESTAMP ORDER BY id DESC";
   $result = mysqli_query($conn, $sql);
 
@@ -18,6 +17,7 @@
   <html>
     <head>
       <title>Bird Noise*</title>
+      <link rel="stylesheet" href="style.css">
     </head>
     <body>
       <div class="chat-app">
@@ -33,7 +33,7 @@
                 <div class="message-bubble">
                   <div class="message-top">
                     <span class="username"><?php echo htmlspecialchars($msg['name']); ?></span>
-                    <span class="msg-index">#<?php echo $msg['id']; ?></span>
+                    <span class="msg-index">delivered using: <?php echo $msg['transportation']; ?></span>
                   </div>
                   
                   <div class="message-text">
@@ -42,6 +42,7 @@
                   
                   <div class="message-times">
                     <?php echo $msg['time_sent']; ?>
+                    <span class="message-status"><?php echo $msg['status'];?></span>
                   </div>
                 </div>
               </div>
@@ -56,9 +57,20 @@
             <input type="text" name="name" placeholder="Your name" required>
             <input type="text" name="message" placeholder="Type a message..." required>
             <button type="submit" name="send">Send</button>
+
+            <div class="bird-selector" onclick="myFunction()">Select transport
+              <span class="popuptext" id="myPopup">
+                <select name="transport" required>
+                  <option value="pidgeon">Carrier Pidgeon</option>
+                  <option value="redbull-athlete">Redbull athlete</option>
+                  <option value="dog">Carrier Dog</option>
+                  <option value="old-person">Old Person</option>
+                </select>
+              </span>
+            </div>
           </form>
         </div>
   
-      </div>
+      </div> <script src="main.js"></script>
     </body>
   </html>
