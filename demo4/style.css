@@ -1,12 +1,12 @@
-/* 1. THE RESET: Strips away default browser spacing */
+/* 1. Removes browser spacing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace; /* The retro typewriter vibe */
+    font-family: 'Courier New', Courier, monospace;
 }
 
-/* 2. THE BACKGROUND: Centers your app on the screen */
+/* 2. BACKGROUND */
 body {
     background-color: #e0e0e0;
     padding: 50px;
@@ -14,18 +14,17 @@ body {
     justify-content: center;
 }
 
-/* 3. THE APP CONTAINER: Creates the main box */
+/* 3. APP CONTAINER(main text box) */
 .chat-app {
     width: 100%;
     max-width: 600px;
     background: white;
     border: 3px solid #111;
     border-radius: 8px;
-    /* REMOVED: box-shadow: 8px 8px 0px #111; */
     overflow: hidden; 
 }
 
-/* 4. THE HEADER */
+/* 4. HEADER */
 .chat-header {
     background: #111;
     color: white;
@@ -33,7 +32,7 @@ body {
     text-align: center;
 }
 
-/* 5. THE CHAT WINDOW */
+/* 5. CHAT WINDOW */
 .chat-body {
     height: 400px;
     background: #f9f9f9;
@@ -41,7 +40,7 @@ body {
     overflow-y: auto; 
 }
 
-/* 6. THE MESSAGE BUBBLES */
+/* 6. MESSAGE BUBBLES */
 .message-bubble {
     background: #ffffff;
     border: 2px solid #ccc;
@@ -62,7 +61,7 @@ body {
 
 .username {
     font-weight: bold;
-    color: #d32f2f; /* Pigeon blood red */
+    color: #d32f2f;
 }
 
 .msg-index {
@@ -74,12 +73,12 @@ body {
     margin-bottom: 10px;
 }
 
-/* New Status and Time formatting */
+/* Status and Time format */
 .message-times {
     font-size: 0.8rem;
     color: #888;
     display: flex;
-    justify-content: space-between; /* Pushes time to the left, status to the right */
+    justify-content: space-between;
 }
 
 .message-status {
@@ -90,7 +89,7 @@ body {
     border-radius: 4px;
 }
 
-/* 7. THE INPUT AREA */
+/* 7. INPUT AREA */
 .chat-footer {
     padding: 20px;
     background: white;
@@ -120,11 +119,9 @@ body {
     background: #d32f2f;
 }
 
-/* =========================================
-   8. THE POPUP MAGIC 
-   ========================================= */
+/* 8. POPUP THING OF DOOM AND DISPAIR*/
 
-/* The clickable text at the bottom */
+/* clickable text for the popup */
 .bird-selector {
     position: relative;
     display: inline-block;
@@ -137,7 +134,7 @@ body {
     text-decoration: underline;
 }
 
-/* The actual popup box (Hidden by default!) */
+/* actual popup box */
 .popuptext {
     visibility: hidden; 
     width: 250px;
@@ -148,20 +145,18 @@ body {
     padding: 10px;
     position: absolute;
     z-index: 1;
-    bottom: 150%; /* Pushes it above the text */
+    bottom: 150%;
     left: 50%;
-    margin-left: -125px; /* Centers it perfectly */
+    margin-left: -125px;
     box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
 }
 
-/* Makes the dropdown menu inside the popup look nice */
 .popuptext select {
     width: 100%;
     padding: 5px;
     margin-top: 5px;
 }
 
-/* The tiny triangle arrow pointing down */
 .popuptext::after {
     content: "";
     position: absolute;
@@ -173,13 +168,12 @@ body {
     border-color: #333 transparent transparent transparent;
 }
 
-/* JavaScript adds this class to make it visible */
 .popuptext.show {
     visibility: visible;
     animation: fadeIn 0.3s;
 }
 
-/* Smooth fade in */
+/* fade in thing i might not understand */
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
