@@ -1,0 +1,186 @@
+/* 1. THE RESET: Strips away default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace; /* The retro typewriter vibe */
+}
+
+/* 2. THE BACKGROUND: Centers your app on the screen */
+body {
+    background-color: #e0e0e0;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+/* 3. THE APP CONTAINER: Creates the main box */
+.chat-app {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    border: 3px solid #111;
+    border-radius: 8px;
+    /* REMOVED: box-shadow: 8px 8px 0px #111; */
+    overflow: hidden; 
+}
+
+/* 4. THE HEADER */
+.chat-header {
+    background: #111;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 5. THE CHAT WINDOW */
+.chat-body {
+    height: 400px;
+    background: #f9f9f9;
+    padding: 20px;
+    overflow-y: auto; 
+}
+
+/* 6. THE MESSAGE BUBBLES */
+.message-bubble {
+    background: #ffffff;
+    border: 2px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.message-top {
+    font-size: 0.85rem;
+    color: #666;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    display: flex; 
+    justify-content: space-between; 
+}
+
+.username {
+    font-weight: bold;
+    color: #d32f2f; /* Pigeon blood red */
+}
+
+.msg-index {
+    font-style: italic;
+}
+
+.message-text {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* New Status and Time formatting */
+.message-times {
+    font-size: 0.8rem;
+    color: #888;
+    display: flex;
+    justify-content: space-between; /* Pushes time to the left, status to the right */
+}
+
+.message-status {
+    font-weight: bold;
+    color: #111;
+    background: #eee;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* 7. THE INPUT AREA */
+.chat-footer {
+    padding: 20px;
+    background: white;
+    border-top: 3px solid #111;
+}
+
+.chat-form input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.chat-form button {
+    background: #111;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.chat-form button:hover {
+    background: #d32f2f;
+}
+
+/* =========================================
+   8. THE POPUP MAGIC 
+   ========================================= */
+
+/* The clickable text at the bottom */
+.bird-selector {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 15px;
+    color: #555;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    text-decoration: underline;
+}
+
+/* The actual popup box (Hidden by default!) */
+.popuptext {
+    visibility: hidden; 
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%; /* Pushes it above the text */
+    left: 50%;
+    margin-left: -125px; /* Centers it perfectly */
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Makes the dropdown menu inside the popup look nice */
+.popuptext select {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+/* The tiny triangle arrow pointing down */
+.popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* JavaScript adds this class to make it visible */
+.popuptext.show {
+    visibility: visible;
+    animation: fadeIn 0.3s;
+}
+
+/* Smooth fade in */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
