@@ -89,35 +89,54 @@ body {
     border-radius: 4px;
 }
 
-/* 7. INPUT AREA */
+/* 7. THE INPUT AREA */
 .chat-footer {
-    padding: 20px;
+    padding: 15px;
     background: white;
     border-top: 3px solid #111;
+    overflow: visible;
 }
 
-.chat-form input[type="text"] {
+.input-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.input-group input[type="text"] {
+    flex: 1;
     padding: 10px;
-    margin-bottom: 10px;
     border: 2px solid #ccc;
     border-radius: 4px;
-    width: 100%;
 }
 
-.chat-form button {
-    background: #111;
-    color: white;
+.input-group button {
     padding: 10px 20px;
     border: none;
-    cursor: pointer;
-    width: 100%;
     font-weight: bold;
     border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
 }
 
-.chat-form button:hover {
+/* SEND button */
+button[name="send"] {
+    background: #111;
+    color: white;
+}
+button[name="send"]:hover {
     background: #d32f2f;
 }
+
+/* CHECK button */
+button[name="refresh-btn"] {
+    background: #555;
+    color: white;
+}
+button[name="refresh-btn"]:hover {
+    background: #3498db;
+}
+
 
 /* 8. POPUP THING OF DOOM AND DISPAIR*/
 
