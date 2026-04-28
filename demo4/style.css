@@ -14,7 +14,7 @@ body {
     justify-content: center;
 }
 
-/* 3. APP CONTAINER(main text box) */
+/* 3. APP CONTAINER (main text box) */
 .chat-app {
     width: 100%;
     max-width: 600px;
@@ -38,6 +38,8 @@ body {
     background: #f9f9f9;
     padding: 20px;
     overflow-y: auto; 
+    display: flex;
+    flex-direction: column; /* Stacks messages vertically */
 }
 
 /* 6. MESSAGE BUBBLES */
@@ -47,6 +49,8 @@ body {
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 15px;
+    width: fit-content; /* Shrink to fit text */
+    max-width: 80%;      /* Don't let it touch the other side */
 }
 
 .message-top {
@@ -61,7 +65,7 @@ body {
 
 .username {
     font-weight: bold;
-    color: #d32f2f;
+    color: #CC741A;
 }
 
 .msg-index {
@@ -94,7 +98,7 @@ body {
     padding: 15px;
     background: white;
     border-top: 3px solid #111;
-    overflow: visible;
+    overflow: visible; /* Required for the bird popup to show */
 }
 
 .input-group {
@@ -137,8 +141,7 @@ button[name="refresh-btn"]:hover {
     background: #3498db;
 }
 
-
-/* 8. POPUP THING OF DOOM AND DISPAIR*/
+/* 8. POPUP THING OF DOOM AND DESPAIR */
 
 /* clickable text for the popup */
 .bird-selector {
@@ -163,7 +166,7 @@ button[name="refresh-btn"]:hover {
     border-radius: 6px;
     padding: 10px;
     position: absolute;
-    z-index: 1;
+    z-index: 10;
     bottom: 150%;
     left: 50%;
     margin-left: -125px;
@@ -192,7 +195,44 @@ button[name="refresh-btn"]:hover {
     animation: fadeIn 0.3s;
 }
 
-/* fade in thing i might not understand */
+/* 9. AUTH HELPER LINKS (Login/Register) */
+.auth-footer {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.85rem;
+    border-top: 1px dashed #ccc;
+    padding-top: 10px;
+}
+
+.auth-link {
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid #CC741A;
+}
+
+/* 10. MESSAGE ALIGNMENT (Sent vs Received) */
+.message-row {
+    display: flex;
+    width: 100%;
+}
+
+/* Push YOUR messages to the right */
+.message-row.sent {
+    justify-content: flex-end;
+}
+
+.sent .message-bubble {
+    background-color: #d1e7ff;
+    border-color: #8db5e2;
+}
+
+/* Push OTHER messages to the left */
+.message-row.received {
+    justify-content: flex-start;
+}
+
+/* fade in thing */
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
