@@ -60,7 +60,6 @@ if (!empty($them)) {
             <?php endforeach; ?>
           </div>
         </div>
-      </div>
 
       <div class="chat-main">
         <div class="chat-header">
