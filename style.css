@@ -1,0 +1,395 @@
+/* 1. Removes browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Background */
+body {
+    background-color: #e0e0e0;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+/* main text box */
+.chat-app {
+    width: 100%;
+    max-width: 900px;
+    height: 85vh;
+    background: white;
+    border: 3px solid #111;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+/* Header and Logout */
+.chat-header {
+    background: #111;
+    color: white;
+    padding: 13px;
+    text-align: center;
+}
+
+/* sidebar style */
+.chat-sidebar {
+    width: 250px;
+    background: #111;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    border-right: 3px solid #111;
+}
+
+.sidebar-header {
+    padding: 15px;
+    background: #111;
+    font-weight: bold;
+    font-size: 0.75rem;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.user-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.user-link {
+    display: block;
+    padding: 15px;
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.8rem;
+    border-bottom: 1px solid #222;
+    transition: 0.2s;
+}
+
+.user-link:hover {
+    background: #252525;
+    color: white;
+}
+
+/* This highlights the person you are currently talking to */
+.user-link.active {
+    background: #CC741A;
+    color: white;
+    font-weight: bold;
+}
+
+/* MAIN AREA */
+.chat-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #f4f4f4;
+}
+
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    margin-top: 10px;
+    border-top: 1px solid #444;
+    padding-top: 8px;
+}
+
+.logout-btn {
+    color: #ff6b6b;
+    text-decoration: none;
+    border: 1px solid #ff6b6b;
+    padding: 2px 6px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.logout-btn:hover {
+    background: #ff6b6b;
+    color: white;
+}
+
+/* 5. Chat window */
+.chat-body {
+    height: 375px;
+    background: #f9f9f9;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* message bubbles */
+.message-bubble {
+    background: #ffffff;
+    border: 2px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    width: fit-content;
+    max-width: 80%;
+}
+
+.message-top {
+    font-size: 0.85rem;
+    color: #666;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+    display: flex; 
+    justify-content: space-between; 
+}
+
+.username {
+    font-weight: bold;
+    color: #CC741A;
+}
+
+.msg-index {
+    font-style: italic;
+    font-size: 0.8rem;
+    justify-content: flex-end;
+}
+
+.message-text {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Time format */
+.message-times {
+    font-size: 0.8rem;
+    color: #888;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/* Input area */
+.chat-footer {
+    padding: 10px;
+    background: white;
+    border-top: 3px solid #111;
+    overflow: visible; 
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.input-group input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-group button {
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.send-btn, .refresh-btn {
+    padding: 0 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 45px;
+    color: white;
+    transition: 0.2s;
+}
+
+/* SEND (Black to Red) */
+.send-btn {
+    background: #111;
+}
+.send-btn:hover {
+    background: #d32f2f;
+}
+
+/* CHECK (Grey to Blue) */
+.refresh-btn {
+    background: #555;
+}
+.refresh-btn:hover {
+    background: #3498db;
+}
+
+/* 8. Popup thing of doom and dispair */
+
+/* clickable text for the popup */
+.bird-selector {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    text-decoration: underline;
+}
+
+/* actual popup box */
+.popuptext {
+    visibility: hidden; 
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 10;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -125px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+}
+
+.popuptext select {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+.popuptext.show {
+    visibility: visible;
+    animation: fadeIn 0.3s;
+}
+
+/* 9. Authorization hyperlink stuff */
+.auth-footer {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.85rem;
+    border-top: 1px dashed #ccc;
+    padding-top: 10px;
+}
+
+.auth-link {
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid #CC741A;
+}
+
+/* 11. Authorization page */
+.auth-page {
+    flex-direction: column;
+    max-width: 450px;
+    height: auto;
+    margin: auto;
+}
+
+.auth-center {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.auth-page .chat-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-page .chat-form button {
+    width: 100%;
+    height: 50px;
+}
+
+/* 10. MESSAGE ALIGNMENT */
+.message-row {
+    display: flex;
+    width: 100%;
+}
+
+/* Push YOUR messages to the right */
+.message-row.sent {
+    justify-content: flex-end;
+}
+
+.sent .message-bubble {
+    background-color: #d1e7ff;
+    border-color: #8db5e2;
+}
+
+/* Push OTHER messages to the left */
+.message-row.received {
+    justify-content: flex-start;
+}
+
+/* fade in thing */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+/* Final form changes of sorts */
+.auth-flex {
+    justify-content: center;
+    align-items: center;
+}
+
+/* login form white box */
+.auth-box {
+    background: white;
+    padding: 30px;
+    border: 2px solid #111;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+/* Username and Password */
+.auth-input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.auth-input:focus {
+    border-color: #111;
+    outline: none;
+}
+
+.chat-body ul li {
+    margin-bottom: 10px;
+    list-style-type: "🐦 ";
+}
+
+input[type="checkbox"] {
+    accent-color: #CC741A;
+}
+
+
