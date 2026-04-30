@@ -53,3 +53,7 @@ Of doom and despair
 * **Requires Empathy:** I don't even know what happens but apparently not all the message get delivered. A tragedy, or something.
   * **Odds:** Chances of not getting your message sent is higher than the chance of a bug smacking your face. 
  
+## Examples
+
+![Evidence 01](./screenshots/Ts&Cs.png)
+![Evidence 02](./screenshots/Main_chat.png)
