@@ -38,23 +38,25 @@ if (isset($_POST['send'])){
 
     // Message damage
     $damage_roll = rand(1,100);
-    $final_message = $message;
 
-    if ($damage_roll > 70 && $damage_roll <= 95) {
+    if ($damage_roll <= 40) {
+      $final_message = $message;
+    }
+    elseif ($damage_roll <= 70) {
       $damaged = "";
       $symbols = ["@", "#", "$", "%", "*", "!", "4", "3", "0", "1", "?", "x"]; 
     
       for ($i = 0; $i < strlen($message); $i++) {
-        $damaged .= (rand(1, 10) == 1) ? $symbols[array_rand($symbols)] : $message[$i];
+        $damaged .= (rand(1, 4) == 1) ? $symbols[array_rand($symbols)] : $message[$i];
       }
       $final_message = $damaged;
-    } elseif ($damage_roll > 95) {
-      $chaos = rand(1, 3);
-      if ($chaos == 1) {
+    } else {
+      $chaos = rand(1, 10);
+      if ($chaos <= 3) {
         $final_message = str_shuffle($message);
-      } elseif ($chaos == 2) {
+      } elseif ($chaos <= 7) {
         // the "Half-Cut"
-        $final_message = substr($message, 0, floor(strlen($message) / 3)) . " ";
+        $final_message = substr($message, 0, floor(strlen($message) / 4)) . "-";
       } else {
         $final_message = "I dont even know bruh";
       }
