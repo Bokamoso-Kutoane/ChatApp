@@ -3,8 +3,8 @@ ini_set('session.cookie_lifetime', 0);
 session_start();
 
 $host = "localhost";
-$user = "";
-$password = "";
+$user = ""; //MySQL username
+$password = ""; //MySQL password
 $database = "ChatApp";
 
 $conn = mysqli_connect($host, $user, $password, $database);
