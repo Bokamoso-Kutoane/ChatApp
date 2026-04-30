@@ -65,7 +65,7 @@ if (!empty($them)) {
 
           <div class="footer-info">
             <p class="logo">BOK</p>
-            <p>&copy; 2025 Bokamoso Kutoane Portfolio. All Rights Reserved.</p>
+            <p>&copy; 2026 Bokamoso Kutoane Portfolio. All Rights Reserved.</p>
             <p>Email: <a href="mailto:kutoanebokamoso505@gmail.com">kutoanebokamoso505@gmail.com</a></p>
           </div>
         </div>

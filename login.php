@@ -32,6 +32,9 @@ if (isset($_POST['login_button'])) {
   <head>
     <title>Bird Noise* Login Centre</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -41,6 +44,12 @@ if (isset($_POST['login_button'])) {
         <div style="text-align:center; padding-top: 50px;">
           <span style="font-size: 3rem;">🐦</span>
           <p style="font-size: 0.7rem; color: #555; padding: 10px;">Login to access the coop.</p>
+        </div>
+
+        <div class="footer-info">
+          <p class="logo">BOK</p>
+          <p>&copy; 2026 Bokamoso Kutoane Portfolio. All Rights Reserved.</p>
+          <p>Email: <a href="mailto:kutoanebokamoso505@gmail.com">kutoanebokamoso505@gmail.com</a></p>
         </div>
       </div>
 
