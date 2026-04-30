@@ -43,8 +43,11 @@ if (!empty($them)) {
 <!DOCTYPE html>
 <html>
   <head>
-      <title>Bird Noise* Coop</title>
-      <link rel="stylesheet" href="style.css">
+    <title>Bird Noise* Coop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   </head>
   <body>
 
